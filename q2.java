@@ -1,11 +1,13 @@
 //q2
 class A {
 public static void main(String[] args) {
-long a=1, b=2,c=0,sum=2;
-for (long i=1; i<=4000000;++i){
-c=a+b;
+long a=1, b=2,c=0,sum=0;
+while(true){
+if(a>=4000000)
+break;
 if(a%2==0)
 sum=sum+a;
+c=a+b;
 a=b;
 b=c;
 }
