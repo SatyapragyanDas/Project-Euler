@@ -1,27 +1,22 @@
 //q10
-import java.util.*;
 class A{
-public static void main(String[] args){
-int sum = 1;
-int ctr = 0; 
-int n = 0; 
-while (ctr < 2000000) {
-n++; 
-if (n % 2 != 0) { 
-if (is_Prime(n)) {
- sum += n; 					
- }
+public static void main(String args[]){
+int i=0,j=0;
+int sum=2;
+for(i=2;i<2000000;i++){
+int p=0;
+	if(i%2!=0){
+		for(j=2;j<=Math.sqrt(i);j++){
+			if(i%j==0){
+			p=1;
+			break;
+			}
+		}
+	if(p!=1){
+		sum=sum+i;
+	}
+	}
 }
-ctr++; 	
-}
-System.out.println("\nSum of the prime numbers till 100: "+sum); 	
-}
-public static boolean is_Prime(int n) {
-for (int i = 3; i * i <= n; i+= 2) {
-if (n % i == 0) {
-return false; 
-}
-}
-return true;
+System.out.println(sum);
 }
 }
