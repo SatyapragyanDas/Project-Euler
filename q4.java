@@ -1,6 +1,6 @@
 //q4
 class A{
-static  int checkpallindrome(int n){
+static  boolean checkpallindrome(int n){
  int x,sum=0,temp;     
   temp=n;    
   while(n>0){    
@@ -9,24 +9,22 @@ static  int checkpallindrome(int n){
    n=n/10;    
   }    
   if(temp==sum)    
-   return 1;    
+   return true;    
   else    
-   return 0;    
+   return false;    
 } 
 public static void main(String args[]){
-int a=999;
-int b=999;
+int a=0;
+int b=0;
 int c=0,d=0;
-for(a=999;a>100;a--){
- for(b=999;b>100;b--){
+int max=-1;
+for(a=100;a<1000;a++){
+ for(b=100;b<1000;b++){
    c=a*b;
-    d=A.checkpallindrome(c);
-   if(d==1)
-   break; 
+   if((c>max)&(checkpallindrome(c)))
+   max=c; 
  }
-if(d==1)
-break;
 }
-System.out.println("The Answer is: "+c);
+System.out.println("The Answer is: "+max);
  }
 }
