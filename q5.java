@@ -1,15 +1,27 @@
 //q5
 class A{
-public static void main(String args[]){
-int lcm=20;
+public static int findLcm(int[] a){
+int lcm=0;
+boolean found;
+int i=1;
 while(true){
- 	if((lcm%1==0) & (lcm%2==0) & (lcm%3==0) & (lcm%4==0) & (lcm%5==0) & (lcm%6==0) & (lcm%7==0) & 		(lcm%8==0) & (lcm%9==0) & (lcm%10==0) & (lcm%11==0) & (lcm%12==0) & (lcm%13==0) & (lcm%14==0)& 	(lcm%15==0) & (lcm%16==0) & (lcm%17==0) & (lcm%18==0) & (lcm%19==0) & (lcm%20==0))
-	{
-		System.out.println("Answer is:"+lcm);
+	found=true;
+	for(int j=0;j<20;j++){
+		if(i%a[j]!=0){
+		found=false;
 		break;
+		}
 	}
- 	
-lcm++;
+	if(found){
+	lcm=i;
+	break;
+	}
+	i++;
+	}
+return lcm;
 }
+public static void main(String args[]){
+int a[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+System.out.println(findLcm(a));
 }
 }
